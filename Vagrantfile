@@ -41,6 +41,7 @@ WP_ALWAYS_RESET      = true # always reset database
 
 WP_CHEF_COOKBOOKS_PATH = File.dirname(__FILE__) # path to the cookbooks (e.g. ~/vccw)
 
+WP_THEME_UNIT_TEST_DATA_URI = 'https://wpcom-themes.svn.automattic.com/demo/theme-unit-test-data.xml'
 
 # end configuration
 
