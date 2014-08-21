@@ -15,7 +15,8 @@ WP_VERSION           = 'latest' # latest or 3.4 or later or http(s):// URL to zi
 WP_LANG              = "ru_RU" # WordPress locale (e.g. ja)
 
 WP_HOSTNAME          = "wordpress.local" # e.g example.com
-WP_IP                = "192.168.50.04" # host ip address
+WP_IP                = "192.168.33.10" # host ip address
+# WP_IP                = "192.168.50.04" # host ip address
 
 WP_TITLE             = "Welcome to the Vagrant" # title
 WP_ADMIN_USER        = "admin" # default user
@@ -53,7 +54,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.hostname = WP_HOSTNAME
   config.vm.network :private_network, ip: WP_IP
 
-  config.vm.synced_folder "www/", "/var/www", :create => "true"
+  config.vm.synced_folder "www/wordpress/", "/var/www/wordpress", :create => "true"
 
   if Vagrant.has_plugin?("vagrant-hostsupdater")
     config.hostsupdater.remove_on_suspend = true
@@ -81,7 +82,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     chef.json = {
       :apache => {
-        :docroot_dir  => '/var/www',
+        :docroot_dir  => '/var/www/wordpress',
         :user         => 'vagrant',
         :group        => 'vagrant',
         :listen_ports => ["80", "443"]
