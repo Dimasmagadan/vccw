@@ -23,7 +23,8 @@ WP_ADMIN_USER        = "admin" # default user
 WP_ADMIN_PASS        = "admin" # default user's password
 
 WP_DB_PREFIX         = 'wp_' # Database prefix
-WP_DB_HOST           = 'localhost' # or WP_IP and other
+WP_DB_HOST           = WP_IP
+# WP_DB_HOST           = 'localhost' # or WP_IP and other
 WP_DB_NAME           = 'wordpress'
 WP_DB_USER           = 'wordpress'
 WP_DB_PASS           = 'wordpress'
